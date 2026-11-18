@@ -1,0 +1,21 @@
+$aspect-width: 432;
+$aspect-height: 768;
+$pc-boundary: 767px;
+$desktop-boundary: 768px;
+$shell-border: 0px;
+$shell-radius: 6px;
+$pc-height-vh: 96;
+$color-bg: #0f0f1a;
+$color-white: #fff;
+$color-shell-bg: linear-gradient(180deg, #101b61 0%, #142474 100%);
+$color-border: #333;
+$color-primary: #4b3fe3;
+$color-primary-light: #6f6fff;
+$color-text: rgba(255, 255, 255, 0.85);
+$color-text-secondary: rgba(255, 255, 255, 0.5);
+:root {
+  --aspect-width: #{$aspect-width};
+  --aspect-height: #{$aspect-height};
+  --shell-border: #{$shell-border};
+  --shell-radius: #{$shell-radius};
+}

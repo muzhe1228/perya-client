@@ -1,0 +1,53 @@
+{
+  "name": "perya-client",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc -b && vite build --mode prod",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "format": "prettier --write src",
+    "type-check": "tsc -b --noEmit",
+    "dev:qat": "vite --mode qat --host",
+    "dev:uat": "vite --mode uat",
+    "dev:prod": "vite --mode prod",
+    "build:qat": "tsc -b && vite build --mode qat",
+    "build:uat": "tsc -b && vite build --mode uat",
+    "build:prod": "tsc -b && vite build --mode prod",
+    "flow:init": "bash scripts/git-flow.sh init",
+    "flow:start": "bash scripts/git-flow.sh start",
+    "flow:done": "bash scripts/git-flow.sh done",
+    "flow:release": "bash scripts/git-flow.sh release",
+    "flow:check": "bash scripts/git-flow.sh check",
+    "flow:promote-origin": "bash scripts/promote-uat-to-origin.sh",
+    "images:compress": "node scripts/compress-images.mjs"
+  },
+  "dependencies": {
+    "@esotericsoftware/spine-player": "^4.3.13",
+    "axios": "^1.19.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.2",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.2.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.4",
+    "postcss-px-to-viewport-8-plugin": "^1.2.5",
+    "prettier": "^3.9.6",
+    "sass": "^1.102.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.67.0",
+    "vite": "^5.4.11",
+    "sharp": "^0.35.4"
+  }
+}

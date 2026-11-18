@@ -1,0 +1,60 @@
+.lobby-banner {
+  position: relative;
+
+  &__viewport {
+    overflow: hidden;
+    // 横向轮播区域不与纵向页面滚动抢手势（避免拖一半被浏览器 cancel）
+    touch-action: none;
+    cursor: grab;
+    user-select: none;
+
+    &.is-dragging {
+      cursor: grabbing;
+    }
+  }
+
+  &__track {
+    display: flex;
+    height: 100%;
+    will-change: transform;
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  &__dots {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    gap: 4px;
+
+    button {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+
+      &.is-active {
+        background: #67F7FF;
+      }
+    }
+  }
+}

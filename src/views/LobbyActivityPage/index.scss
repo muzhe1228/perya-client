@@ -1,0 +1,42 @@
+.lobby-activity-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 4px 11px 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 6px auto 12px;
+    width: 360px;
+    height: 35px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 18px;
+    background-color: #084985;
+    text-align: center;
+  }
+
+  /** Figma（@2x 量具）：51.86 / 64.82 → @1x 26 / 32.5；字距 1% */
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  &__scroll {
+    flex: 1;
+    min-height: 0;
+    padding-bottom: 8px;
+
+    .il-footer.is-end {
+      display: none;
+    }
+  }
+}

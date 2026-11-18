@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  list-style: none !important;
+}
+
+html,
+body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  width: 100%;
+  height: 100%;
+  font-size: 16px; // 首屏兜底；正式基准由 rem.ts 写入（壳宽/10）
+  line-height: 1;
+  font-family: "Baloo 2", "PingFang SC", system-ui, sans-serif !important;
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    background: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.page-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #101b61 0%, #142474 100%);
+}
+
+.is-click {
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+// 单行文本超出显示省略号（容器需有确定宽度）
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

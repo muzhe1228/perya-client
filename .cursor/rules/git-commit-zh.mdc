@@ -1,0 +1,51 @@
+---
+description: Git 提交说明一律使用简体中文（含编辑器/Agent 生成的 commit message）
+alwaysApply: true
+---
+
+# Git 提交说明（中文）
+
+为本仓库撰写或生成 **任何** Git 提交说明时（含 Cursor 源代码管理「生成提交说明」、Agent 代写 `git commit`、PR 标题若与 commit 同源），**必须使用简体中文**。
+
+## 格式
+
+- 第一行：简短摘要（建议 50 字内），说明「为什么」而非堆砌文件名。
+- 前缀可用团队习惯：`feat:` / `fix:` / `refactor:` / `chore:` 等，**冒号后正文仍用中文**。
+- 全中文前缀亦可：`修复：`、`功能：`、`重构：`。
+- 不要使用英文句子作为摘要主体（专有名词、包名、API 名、类型名可保留英文）。
+
+## 示例
+
+```
+feat: 修复 FullMap 刷新后 JP 倍率与 layout 原倍率分区展示
+
+踩中 JP 后刷新时从明细与 minimap 窗恢复 layout baseMultiplier，REWARD 区 SubNum 与道具头顶分轨。
+```
+
+```
+fix: 补全 FullMap lastSpin 类型以通过 tsc
+```
+
+## 代写 commit 时
+
+遵循用户 git 安全协议（不擅自提交、不改 git config）；生成 message 后仍用 HEREDOC 等方式写入，**语言必须为中文**。
+
+## Git 本地强制（commit-msg）
+
+仓库 `.githooks/commit-msg` 会在 `git commit` 时检查 subject **去掉 `feat:`/`fix(scope):` 等前缀后是否含汉字**；纯英文说明会被拒绝。
+
+激活方式（本机一次，不改全局 git 配置时可只在当前仓库执行）：
+
+```bash
+git config core.hooksPath .githooks
+```
+
+与 `.githooks/pre-commit`（type-check）共用同一路径。新 clone 后需再执行一次上述命令。
+
+**仍可能出英文的情况**：未激活 hooksPath 时 hook 不跑；`git commit --no-verify` 可跳过（不建议）。
+
+## 编辑器「✨ 生成提交说明」
+
+- **`.cursor/rules`（含本文件）不会作用于** 源代码管理里的 Generate commit message。
+- **仓库根目录 `.cursorrules`** 会参与该功能；本仓库已放置与上文一致的中文说明，点 ✨ 后应生成中文（Cursor 小模型仍可能偶发英文，可多试或手改）。
+- User Rules 里的中文说明对部分版本有效，可与 `.cursorrules` 并用。

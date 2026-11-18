@@ -1,0 +1,210 @@
+@use "../../FitWidthText/index.scss";
+
+.lobby-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(180deg, rgba(26, 104, 175, 0.6) 0%, rgba(112, 193, 255, 0) 55.29%, rgba(63, 152, 255, 0.48) 100%);
+  border-bottom: 1px solid #A2CCFF;
+  box-shadow: 0px -3.13px 10.28px 0px #76CBFF33 inset,
+    0px 2.41px 4.82px 0px #0859AE66;
+
+  &--activity-back &__left {
+    width: 34px;
+    padding-top: 4px;
+  }
+
+  &__left {
+    flex-shrink: 0;
+    padding-top: 6px;
+    width: 36px;
+
+    &.is-click,
+    button.is-click {
+      display: block;
+      padding-top: 5px;
+      margin: 0;
+      border: none;
+      background: transparent;
+      line-height: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &--spacer {
+      display: block;
+      padding-top: 0;
+    }
+  }
+
+  &__right {
+    flex-shrink: 0;
+    width: 36px;
+    padding-top: 6px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    line-height: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__center {
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+
+    .user-info {
+      flex: 0 1 auto;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &__avatar {
+        flex-shrink: 0;
+        width: 33px;
+        height: 33px;
+        border: 1.5px solid transparent;
+        border-radius: 17px;
+        background: url('@/assets/images/avatar.png') center center / 100% 100% no-repeat padding-box, linear-gradient(180deg, #E2F3FF 0%, #D2EDFF 100%);
+        box-shadow: 0px -0.66px 1px 0px #4D8DB299 inset, 0px 0.93px 1px 0px #FFFFFF99 inset;
+      }
+
+      &__name {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-text {
+          display: block;
+          max-width: 100%;
+          font-size: 14px;
+          font-weight: 700;
+          color: #E6F4FF;
+          margin-bottom: 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &-vip {
+          position: relative;
+          display: inline-flex;
+          width: fit-content;
+          align-items: center;
+          white-space: nowrap;
+          background: linear-gradient(180deg, #FEEE97 0%, #FDCF5D 79.81%);
+          box-shadow: 0px 1px 2px 0px #2C5F83, 0px 0.5px 2px 0px #FFE760 inset, 0px 1.09px 0px 0px #CF916A;
+          border-radius: 8px;
+          color: #7A3B0B;
+          font-weight: 700;
+          padding: 2px 6px 2px 20px;
+          font-size: 12px;
+
+          &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 2px;
+            top: 1px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #96530F;
+            box-shadow: 0px 0px 2px 0px #36000099 inset;
+            padding-right: 1px;
+
+            img {
+              width: 12px;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__wallet {
+    flex: 0 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 6px;
+  }
+
+  &__pill {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 112px;
+    width: 112px;
+    height: 26px;
+    font-weight: 700;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    background: linear-gradient(360deg, #136CFF 0%, #134DE1 67.79%) padding-box, linear-gradient(180deg, #2D86EF 0%, #58BDFF 100%) border-box;
+
+    &-value {
+      flex: 1;
+      min-width: 0;
+      color: #67F7FF;
+      line-height: 1;
+    }
+
+    &--balance {
+      padding-right: 26px;
+      padding-left: 6px;
+    }
+
+    &--tickets {
+      padding-left: 32px;
+      padding-right: 6px;
+    }
+
+    &-add {
+      position: absolute;
+      right: 1.5px;
+      top: 2px;
+      width: 23px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      line-height: 0;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &-coin {
+      position: absolute;
+      left: 1px;
+      top: 1.5px;
+      width: 28px;
+      pointer-events: none;
+    }
+  }
+}

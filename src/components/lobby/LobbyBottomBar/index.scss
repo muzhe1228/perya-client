@@ -1,0 +1,50 @@
+.lobby-bottom {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 62px;
+  width: 100%;
+  background: linear-gradient(180deg, #0085B5 0%, rgba(18, 135, 193, 0.7) 53.66%, rgba(21, 172, 202, 0.7) 100%);
+  border: 1px solid #A2CCFF;
+  border-radius: 15px 15px 0 0;
+
+  &__side {
+    width: 144px;
+    img {
+      vertical-align: bottom;
+      width: 100%;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 186px;
+
+    // 居中靠 translateX，须与全局 .is-click:active 的 scale 合并，否则会丢掉 translate 导致横跳
+    &.is-click:active {
+      transform: translateX(-50%) scale(0.96);
+    }
+
+    img {
+      width: 100%;
+      vertical-align: bottom;
+      transform-origin: 50% 100%;
+      animation: lobby-bottom-play-breathe 2.4s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes lobby-bottom-play-breathe {
+  0%,
+  100% {
+    transform: scale(0.99);
+  }
+
+  50% {
+    transform: scale(1.01);
+  }
+}

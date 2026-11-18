@@ -1,0 +1,33 @@
+@use "variables" as *;
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin safe-area($directions: all) {
+  @if $directions == all or list-contains($directions, top) {
+    padding-top: env(safe-area-inset-top);
+  }
+  @if $directions == all or list-contains($directions, bottom) {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  @if $directions == all or list-contains($directions, left) {
+    padding-left: env(safe-area-inset-left);
+  }
+  @if $directions == all or list-contains($directions, right) {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-boundary}) { @content; }
+}
+@mixin mobile {
+  // 仅按视口宽度划分，避免宽屏触控设备同时命中 desktop+mobile 导致壳宽与 rem 错位
+  @media screen and (max-width: #{$pc-boundary}) { @content; }
+}
+@mixin gradient-text($from: $color-primary, $to: $color-primary-light) {
+  background: linear-gradient(135deg, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

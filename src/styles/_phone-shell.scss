@@ -1,0 +1,54 @@
+@use "common" as *;
+.shell-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.background-layer {
+  position: absolute;
+  inset: 0;
+  background: $color-shell-bg;
+  z-index: 0;
+}
+.phone-container {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--shell-radius);
+  @include desktop {
+    box-sizing: content-box !important;
+    width: min(var(--shell-width-vh), calc(96dvh * var(--aspect-width) / var(--aspect-height)), var(--shell-max-width));
+    aspect-ratio: var(--aspect-width) / var(--aspect-height);
+    border: var(--shell-border) solid $color-border;
+    transition: width 0.3s ease;
+  }
+  // 移动端：铺满视口（高度可为 20:9 等全面屏），不锁 9:16；PC 预览仍用 desktop 9:16 壳
+  @include mobile {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    transform: none;
+    border: none;
+    border-radius: 0;
+    @include safe-area(all);
+  }
+}
+.main-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.page-wrapper {
+  position: absolute;
+  inset: 0;
+  background: $color-shell-bg;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}

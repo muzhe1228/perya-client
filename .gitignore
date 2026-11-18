@@ -1,0 +1,13 @@
+node_modules
+dist
+*.local
+.vite
+*.tsbuildinfo
+node_modules/.tmp
+.env.local
+.env.*.local
+.env
+.env.development
+.env.prod
+.env.qat
+.env.uat

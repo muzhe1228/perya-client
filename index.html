@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Perya 大厅</title>
+    <style>input, textarea, select { font-size: 16px; }</style>
+    <script>
+      if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        document.querySelector('meta[name="viewport"]')?.setAttribute("content", "width=device-width, initial-scale=1.0");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash"></div>
+      <style>
+        .boot-splash {
+          position: fixed; inset: 0;
+          background: radial-gradient(ellipse at 30% 20%, rgba(75, 63, 227, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 70% 80%, rgba(111, 111, 255, 0.1) 0%, transparent 50%), #0f0f1a;
+        }
+      </style>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

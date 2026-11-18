@@ -1,0 +1,15 @@
+@use "common" as *;
+.error-boundary {
+  @include flex-center;
+  flex-direction: column;
+  gap: 18.43px;
+  width: 100%;
+  height: 100%;
+  color: $color-text;
+  button {
+    padding: 11.52px 23.04px;
+    border-radius: 9.22px;
+    background: $color-primary;
+    color: $color-white;
+  }
+}

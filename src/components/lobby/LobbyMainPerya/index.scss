@@ -1,0 +1,118 @@
+/** 与 LobbyLayout `.playMapBg` 高度一致，贴在地图岛区域 */
+.lobby-main-perya {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /** 与 LobbyLayout `.playMapBg` 底对齐（main 区域在底栏上方 62px） */
+  bottom: -62px;
+  z-index: 1;
+  height: 734px;
+  pointer-events: none;
+
+  &__building {
+    position: absolute;
+    pointer-events: auto;
+    width: 190px;
+    height: 250px;
+
+    &.db {
+      bottom: 11%;
+      right: 8.9%;
+      width: 175px;
+    }
+
+    &.ht {
+      bottom: 22.4%;
+      left: 5.1%;
+      width: 186px;
+    }
+
+    &.pp {
+      bottom: 38%;
+      right: 1.7%;
+      width: 185px;
+    }
+
+    &.cg {
+      bottom: 52.5%;
+      left: 0.5%;
+      width: 223px;
+      height: 266px;
+    }
+
+    .spine-player-wrapper {
+      width: 100%;
+      height: 100%;
+      opacity: 1 !important;
+      background: transparent;
+    }
+  }
+
+  /** 建筑底座入口（对齐 play-map 四游戏铭牌） */
+  &__enter {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    bottom: 0;
+    width: 58%;
+    max-width: 105px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 0;
+    transform: translateX(-50%);
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 3px 2px rgb(0 28 72 / 35%));
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /** 保留 translateX(-50%)，避免被全局 .is-click:active 盖掉导致横向跳动 */
+    &.is-click:active {
+      transform: translateX(-50%) scale(0.96);
+    }
+  }
+
+  &__building &__enter {
+    width: 157px;
+    left: 50%;
+  }
+
+  &__building.cg &__enter {
+    bottom: 0;
+  }
+
+  &__building.ht &__enter {
+    bottom: 10%;
+  }
+
+  &__building.pp &__enter {
+    bottom: 9.5%;
+    left: 51%;
+  }
+
+  &__building.db &__enter {
+    bottom: 13%;
+  }
+
+  /** 随 PL_*_Video 骨骼，挂在 spine-player-overlay 内 */
+  &__video {
+    position: absolute;
+    z-index: 0;
+    width: 67px;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: 50% 50%;
+  }
+
+  &__video-el {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #0a1a2e;
+  }
+}

@@ -1,0 +1,16 @@
+// Figma 導覽色票 — docs/figma-perya-lobby.md
+.lobby-page {
+  --lobby-primary: #023c73;
+  --lobby-primary-mid: #095a91;
+  --lobby-primary-deep: #03306e;
+  --lobby-accent: #117298;
+  --lobby-icon-light: #84c7ff;
+  --lobby-surface: rgba(0, 40, 100, 0.35);
+  --lobby-border: rgba(255, 255, 255, 0.25);
+  --lobby-text: #fff;
+  --lobby-play: linear-gradient(180deg, #ffe566, #ffb300);
+  --lobby-dock: linear-gradient(180deg, #1d4f9c, #0f2d5c);
+  --lobby-list-bg: linear-gradient(180deg, #1e5fbf, #174a96);
+  --lobby-radius: 13.83px;
+  --lobby-shadow: 0 4.61px 13.83px rgba(0, 20, 60, 0.35);
+}

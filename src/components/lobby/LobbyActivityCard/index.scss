@@ -1,0 +1,155 @@
+.lobby-activity-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &__ended {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 17px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__banner {
+    border-radius: 17px;
+    position: relative;
+    width: 377px;
+    height: 155px;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, #25CE3B 0%, #09AF55 50%) border-box;
+    box-shadow: 0px 5px 6px 0px #042855CC;
+  }
+
+  &__hero {
+    width: 100%;
+    height: 151px;
+    vertical-align: middle;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    height: 30px;
+    width: auto;
+    pointer-events: none;
+  }
+
+  &__rule {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 0;
+
+    img {
+      display: block;
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__foot {
+    position: absolute;
+    bottom: 1.5px;
+    left: 0;
+    border-radius: 0 0 16px 16px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 56px;
+    padding: 6px 10px 8px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px)
+  }
+
+  &__meta {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    display: block;
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  &__date {
+    margin: 4px 0 0;
+    font-size: 10px;
+  }
+
+  &__action {
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 0;
+    img {
+      display: block;
+      height: 42px;
+      width: auto;
+      max-width: 118px;
+      object-fit: contain;
+    }
+  }
+
+  &.blue-card {
+    .lobby-activity-card__banner {
+      background: linear-gradient(180deg, #569CFF 0%, #4171FF 50%)border-box;
+    }
+    .lobby-activity-card__foot {
+      background: linear-gradient(180deg, rgba(35, 95, 224, 0.6) 0%, #4171FF 80%);
+      box-shadow: 0px 3px 2px 0px #0D57C9;
+    }
+  }
+
+  &.green-card {
+    .lobby-activity-card__banner {
+      background: linear-gradient(180deg, #25CE3B 0%, #09AF55 50%) border-box;
+    }
+    .lobby-activity-card__foot {
+      background: linear-gradient(180deg, rgba(7, 174, 83, 0.6) 0%, #07AE53 80%);
+      box-shadow: 0px 3px 2px 0px #00744A;
+    }
+  }
+  &.green1-card {
+    .lobby-activity-card__banner {
+      background: linear-gradient(180deg, #58FFCF 0%, #02BF8B 50%) border-box;
+      
+    }
+    .lobby-activity-card__foot {
+      background: linear-gradient(180deg, rgba(27, 237, 178, 0.6) 0%, #00BF8A 80%);
+      box-shadow: 0px 3px 2px 0px #039E74;
+    }
+  }
+
+  &.pink-card {
+    .lobby-activity-card__banner {
+      background: linear-gradient(180deg, #FF57A1 0%, #DD4487 50%) border-box;
+    }
+    .lobby-activity-card__foot {
+      background: linear-gradient(180deg, rgba(217, 52, 124, 0.6) 0%, #DD4386 80%);
+      box-shadow: 0px 3px 2px 0px #B70051;
+    }
+  }
+  &.glod-card {
+    .lobby-activity-card__banner {
+      background: linear-gradient(180deg, #FF9838 0%, #BF640F 50%) border-box;
+    }
+    .lobby-activity-card__foot {
+      background: linear-gradient(180deg, rgba(191, 99, 14, 0.6) 0%, #BF630E 80%);
+      box-shadow: 0px 3px 2px 0px #93571F;
+    }
+  }
+}
